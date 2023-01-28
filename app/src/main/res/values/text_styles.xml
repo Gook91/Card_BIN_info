@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="text_divider">
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="text_big">
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+</resources>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Атрибуты для работы в xml c кастомным view блока информации-->
+    <declare-styleable name="InfoBlockView">
+        <attr name="title_text" format="string" />
+        <attr name="main_text" format="string" />
+        <attr name="second_text" format="string" />
+    </declare-styleable>
+</resources>

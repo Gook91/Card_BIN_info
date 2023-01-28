@@ -1,0 +1,38 @@
+<resources>
+    <string name="app_name">Card BIN info</string>
+    <string name="log_tag">my_bin_log</string>
+
+    <!-- Главное activity-->
+    <string name="bin_edit_text_hint">Введите BIN от 4 до 8 цифр</string>
+
+    <string name="error_response">Ошибка при выполнении запроса</string>
+    <string name="bin_not_found">Такой BIN не найден!</string>
+
+    <!-- Приветственный фрагмент -->
+    <string name="to_history">К истории запросов</string>
+
+    <!-- Фрагмент с историей -->
+    <string name="delete_entry_question">Вы хотите удалить запись?</string>
+    <string name="delete">Удалить</string>
+    <string name="cancel">Отмена</string>
+
+    <!-- Фрагмент с информацией BIN -->
+    <string name="main_title">Основная информация</string>
+    <string name="scheme">Платёжная система:</string>
+
+    <string name="type_title">Тип карты:</string>
+    <string name="debit">Дебетовая</string>
+    <string name="credit">Кредитная</string>
+
+    <string name="prepaid">предоплаченная</string>
+
+    <string name="length_title">Длина номера карт:</string>
+    <string name="length">%1$d цифр</string>
+    <string name="luhn"> применяется алгоритм Луна</string>
+
+    <string name="bank_title">Информация о банке</string>
+    <string name="bank">Банк</string>
+
+    <string name="country">Страна</string>
+    <string name="coordinates"><a href="geo:%1$.1f,%2$.1f">Координаты: %1$.1f,%2$.1f</a></string>
+</resources>

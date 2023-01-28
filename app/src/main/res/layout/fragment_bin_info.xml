@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:info_block="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragments.BinInfoFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/main_title"
+            style="@style/text_divider"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/main_title"
+            app:layout_constraintEnd_toStartOf="@id/main_title_divider"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.divider.MaterialDivider
+            android:id="@+id/main_title_divider"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            app:layout_constraintBottom_toBottomOf="@id/main_title"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/main_title"
+            app:layout_constraintTop_toTopOf="@id/main_title" />
+
+        <com.example.cardbininfo.ui.InfoBlockView
+            android:id="@+id/scheme"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/main_title"
+            info_block:title_text="@string/scheme" />
+
+        <com.example.cardbininfo.ui.InfoBlockView
+            android:id="@+id/type"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/scheme"
+            info_block:second_text="@string/prepaid"
+            info_block:title_text="@string/type_title" />
+
+        <com.example.cardbininfo.ui.InfoBlockView
+            android:id="@+id/length"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/type"
+            info_block:second_text="@string/luhn"
+            info_block:title_text="@string/length_title" />
+
+        <TextView
+            android:id="@+id/bank_title"
+            style="@style/text_divider"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/bank_title"
+            app:layout_constraintEnd_toStartOf="@id/bank_title_divider"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/length" />
+
+        <com.google.android.material.divider.MaterialDivider
+            android:id="@+id/bank_title_divider"
+            style="@style/text_divider"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="@id/bank_title"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/bank_title"
+            app:layout_constraintTop_toTopOf="@id/bank_title" />
+
+        <androidx.constraintlayout.widget.Group
+            android:id="@+id/bank_group"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="visible"
+            app:constraint_referenced_ids="bank,bank_url, bank_phone" />
+
+        <com.example.cardbininfo.ui.InfoBlockView
+            android:id="@+id/bank"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/bank_title"
+            info_block:title_text="@string/bank" />
+
+        <TextView
+            android:id="@+id/bank_url"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:autoLink="web"
+            app:layout_constraintEnd_toStartOf="@id/bank_phone"
+            app:layout_constraintHorizontal_chainStyle="spread_inside"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/bank"
+            tools:text="www.open.ru" />
+
+        <TextView
+            android:id="@+id/bank_phone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:autoLink="phone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/bank_url"
+            app:layout_constraintTop_toBottomOf="@id/bank"
+            tools:text="+7(123)456-78-90" />
+
+        <androidx.constraintlayout.widget.Group
+            android:id="@+id/country_group"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="visible"
+            app:constraint_referenced_ids="country, country_coordinates " />
+
+        <com.example.cardbininfo.ui.InfoBlockView
+            android:id="@+id/country"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/bank_phone"
+            info_block:title_text="@string/country" />
+
+        <TextView
+            android:id="@+id/country_coordinates"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/country"
+            tools:text="@string/coordinates" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</ScrollView>

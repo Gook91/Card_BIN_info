@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/navigation"
+    app:startDestination="@id/welcome_fragment">
+
+    <fragment
+        android:id="@+id/welcome_fragment"
+        android:name="com.example.cardbininfo.fragments.WelcomeFragment">
+        <action
+            android:id="@+id/from_welcome_to_history"
+            app:destination="@id/history_fragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/history_fragment"
+        android:name="com.example.cardbininfo.fragments.HistoryFragment" />
+
+    <!-- Переход на фрагмент с информацией о Bin, так,
+    чтобы он сохранялся в одном экземпляре в стэке -->
+    <action
+        android:id="@+id/new_bin_fragment"
+        app:destination="@id/bin_info_fragment"
+        app:enterAnim="@anim/slide_in_right"
+        app:exitAnim="@anim/slide_out_left"
+        app:launchSingleTop="true"
+        app:popEnterAnim="@android:anim/slide_in_left"
+        app:popExitAnim="@android:anim/slide_out_right" />
+
+    <fragment
+        android:id="@+id/bin_info_fragment"
+        android:name="com.example.cardbininfo.fragments.BinInfoFragment">
+        <argument
+            android:name="bin_param"
+            app:argType="com.example.cardbininfo.binDataClasses.Bin" />
+    </fragment>
+
+</navigation>
