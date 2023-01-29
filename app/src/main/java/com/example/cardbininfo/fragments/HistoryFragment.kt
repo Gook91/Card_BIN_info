@@ -15,6 +15,7 @@ import kotlinx.coroutines.launch
 import com.example.cardbininfo.R
 import com.example.cardbininfo.database.AppDatabase
 import com.example.cardbininfo.ui.HistoryAdapter
+import kotlinx.coroutines.flow.take
 
 class HistoryFragment : Fragment() {
 
@@ -33,7 +34,7 @@ class HistoryFragment : Fragment() {
             val historyBinFlow =
                 AppDatabase.getInstance(requireContext()).historyBinDao().getAllStrings()
             // Получаем данные из потока и создаём адаптер с ними
-            historyBinFlow.collect { binList ->
+            historyBinFlow.take(1).collect { binList ->
                 val historyList = view.findViewById<RecyclerView>(R.id.history_list)
                 historyList.adapter = HistoryAdapter(binList) { setTextInUserEdit(it) }
                 historyList.addItemDecoration(
